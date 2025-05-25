@@ -1,0 +1,27 @@
+May 22, 2025 9:56:36 PM edu.curtin.oose2025s1.assignment2.model.Simulation run
+INFO: Starting simulation
+May 22, 2025 9:56:37 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: town-founding Stanton_Heathmore 834
+May 22, 2025 9:56:37 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: town-founding Picklestock 895
+May 22, 2025 9:56:39 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: railway-construction Stanton_Heathmore Picklestock
+May 22, 2025 9:56:42 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: town-population Picklestock 837
+May 22, 2025 9:56:44 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: railway-duplication Stanton_Heathmore Picklestock
+May 22, 2025 9:56:44 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+WARNING: Invalid message: railway-duplication Stanton_Heathmore Picklestock, error: No single-track railway exists between Stanton_Heathmore and Picklestock
+May 22, 2025 9:56:46 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: 
+May 22, 2025 9:56:46 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+WARNING: Invalid message: , error: Message must have 3 parts
+May 22, 2025 9:56:47 PM java.lang.Shutdown logRuntimeExit
+FINE: Runtime.exit() called with status: 143
+java.lang.Throwable: Runtime.exit(143)
+	at java.base/java.lang.Shutdown.logRuntimeExit(Shutdown.java:179)
+	at java.base/java.lang.Shutdown.exit(Shutdown.java:160)
+	at java.base/java.lang.Terminator$1.handle(Terminator.java:51)
+	at java.base/jdk.internal.misc.Signal$1.run(Signal.java:218)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
