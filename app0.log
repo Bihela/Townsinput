@@ -1,22 +1,532 @@
-May 22, 2025 9:56:36 PM edu.curtin.oose2025s1.assignment2.model.Simulation run
+May 26, 2025 7:54:56 PM edu.curtin.oose2025s1.assignment2.model.Simulation run
 INFO: Starting simulation
-May 22, 2025 9:56:37 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:54:56 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 1: Starting transport for 0 towns
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 INFO: Processing message: town-founding Stanton_Heathmore 834
-May 22, 2025 9:56:37 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 INFO: Processing message: town-founding Picklestock 895
-May 22, 2025 9:56:39 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=834
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 895 goods for Picklestock, new stockpile=895
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 2: Starting transport for 2 towns
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:54:57 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 INFO: Processing message: railway-construction Stanton_Heathmore Picklestock
-May 22, 2025 9:56:42 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle <init>
+INFO: Started construction, completionDay=8
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Railway <init>
+INFO: Railway created: Stanton_Heathmore <-> Picklestock, initial directionAToB=true
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town addRailway
+INFO: Added railway to Stanton_Heathmore: Stanton_Heathmore <-> Picklestock
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town addRailway
+INFO: Added railway to Picklestock: Stanton_Heathmore <-> Picklestock
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=3
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=3, completionDay=8
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=3
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=3, completionDay=8
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=1668
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 895 goods for Picklestock, new stockpile=1790
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 3: Starting transport for 2 towns
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=1668, Picklestock stockpile=1790
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 0 goods from Stanton_Heathmore to Picklestock, source stockpile=1668, destination stockpile=1790
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:54:58 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 0 goods for Picklestock, new stockpile=1790
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=4
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=4, completionDay=8
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=4
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=4, completionDay=8
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=2502
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 895 goods for Picklestock, new stockpile=2685
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 4: Starting transport for 2 towns
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=2502, Picklestock stockpile=2685
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 0 goods from Stanton_Heathmore to Picklestock, source stockpile=2502, destination stockpile=2685
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:54:59 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 0 goods for Picklestock, new stockpile=2685
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=5
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=5, completionDay=8
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=5
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=5, completionDay=8
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=3336
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 895 goods for Picklestock, new stockpile=3580
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 5: Starting transport for 2 towns
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=3336, Picklestock stockpile=3580
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 0 goods from Stanton_Heathmore to Picklestock, source stockpile=3336, destination stockpile=3580
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:00 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 0 goods for Picklestock, new stockpile=3580
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 INFO: Processing message: town-population Picklestock 837
-May 22, 2025 9:56:44 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Town setPopulation
+INFO: Set population=837 for Picklestock
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=6
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=6, completionDay=8
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=6
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=6, completionDay=8
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=4170
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=4417
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 6: Starting transport for 2 towns
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=4170, Picklestock stockpile=4417
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 0 goods from Stanton_Heathmore to Picklestock, source stockpile=4170, destination stockpile=4417
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:01 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 0 goods for Picklestock, new stockpile=4417
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=7
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=7, completionDay=8
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=7
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Remaining in UnderConstructionSingle, currentDay=7, completionDay=8
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=5004
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=5254
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 7: Starting transport for 2 towns
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=5004, Picklestock stockpile=5254
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track under construction, directionAToB=true
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 0 goods from Stanton_Heathmore to Picklestock, source stockpile=5004, destination stockpile=5254
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:02 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 0 goods for Picklestock, new stockpile=5254
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 INFO: Processing message: railway-duplication Stanton_Heathmore Picklestock
-May 22, 2025 9:56:44 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 WARNING: Invalid message: railway-duplication Stanton_Heathmore Picklestock, error: No single-track railway exists between Stanton_Heathmore and Picklestock
-May 22, 2025 9:56:46 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track under construction, day=8
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.patterns.UnderConstructionSingle nextState
+INFO: Transitioning to SingleTrack, currentDay=8, completionDay=8
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=8
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=5838
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=6091
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 8: Starting transport for 2 towns
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=5838, Picklestock stockpile=6091
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Stanton_Heathmore -> Picklestock, directionAToB=true, available=5838, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Stanton_Heathmore, new stockpile=5738
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=false
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile updated, new directionAToB=false
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile=5738, destination stockpile=6091
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Stanton_Heathmore
+May 26, 2025 7:55:03 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Picklestock, new stockpile=6191
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=9
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=9
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=6572
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=7028
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 9: Starting transport for 2 towns
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Picklestock stockpile=7028, Stanton_Heathmore stockpile=6572
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Picklestock -> Stanton_Heathmore, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Picklestock -> Stanton_Heathmore, directionAToB=false, available=7028, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Picklestock, new stockpile=6928
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=true
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile updated, new directionAToB=true
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile=6928, destination stockpile=6572
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Picklestock
+May 26, 2025 7:55:04 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Stanton_Heathmore, new stockpile=6672
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 INFO: Processing message: 
-May 22, 2025 9:56:46 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
 WARNING: Invalid message: , error: Message must have 3 parts
-May 22, 2025 9:56:47 PM java.lang.Shutdown logRuntimeExit
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=10
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=10
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=7506
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=7765
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 10: Starting transport for 2 towns
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=7506, Picklestock stockpile=7765
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Stanton_Heathmore -> Picklestock, directionAToB=true, available=7506, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Stanton_Heathmore, new stockpile=7406
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=false
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile updated, new directionAToB=false
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile=7406, destination stockpile=7765
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Stanton_Heathmore
+May 26, 2025 7:55:05 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Picklestock, new stockpile=7865
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=11
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=11
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=8240
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=8702
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 11: Starting transport for 2 towns
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Picklestock stockpile=8702, Stanton_Heathmore stockpile=8240
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Picklestock -> Stanton_Heathmore, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Picklestock -> Stanton_Heathmore, directionAToB=false, available=8702, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Picklestock, new stockpile=8602
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=true
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile updated, new directionAToB=true
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile=8602, destination stockpile=8240
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Picklestock
+May 26, 2025 7:55:06 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Stanton_Heathmore, new stockpile=8340
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=12
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=12
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=9174
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=9439
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 12: Starting transport for 2 towns
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=9174, Picklestock stockpile=9439
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Stanton_Heathmore -> Picklestock, directionAToB=true, available=9174, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Stanton_Heathmore, new stockpile=9074
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=false
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile updated, new directionAToB=false
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile=9074, destination stockpile=9439
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Stanton_Heathmore
+May 26, 2025 7:55:07 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Picklestock, new stockpile=9539
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: town-founding Picklestock Picklestock 785 _)qF*~
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+WARNING: Invalid message: town-founding Picklestock Picklestock 785 _)qF*~, error: Message must have 3 parts
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=13
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=13
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=9908
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=10376
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 13: Starting transport for 2 towns
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Picklestock stockpile=10376, Stanton_Heathmore stockpile=9908
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Picklestock -> Stanton_Heathmore, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Picklestock -> Stanton_Heathmore, directionAToB=false, available=10376, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Picklestock, new stockpile=10276
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=true
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile updated, new directionAToB=true
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile=10276, destination stockpile=9908
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Picklestock
+May 26, 2025 7:55:08 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Stanton_Heathmore, new stockpile=10008
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=14
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=14
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=10842
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=11113
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 14: Starting transport for 2 towns
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Stanton_Heathmore stockpile=10842, Picklestock stockpile=11113
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Stanton_Heathmore -> Picklestock, state=Single-track completed, directionAToB=true
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Stanton_Heathmore -> Picklestock, directionAToB=true, available=10842, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Stanton_Heathmore, new stockpile=10742
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=false
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile updated, new directionAToB=false
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Stanton_Heathmore to Picklestock, source stockpile=10742, destination stockpile=11113
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Stanton_Heathmore
+May 26, 2025 7:55:09 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Picklestock, new stockpile=11213
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+INFO: Processing message: town-founding hhvzLP0IuXp Stanton_Heathmore Picklestock T5fpW&*8o:
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.input.MessageProcessorImpl processMessages
+WARNING: Invalid message: town-founding hhvzLP0IuXp Stanton_Heathmore Picklestock T5fpW&*8o:, error: Message must have 3 parts
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=15
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Railway updateState
+INFO: Updating state: Single-track completed, day=15
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 834 goods for Stanton_Heathmore, new stockpile=11576
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Town produceGoods
+INFO: Produced 837 goods for Picklestock, new stockpile=12050
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Day 15: Starting transport for 2 towns
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Stanton_Heathmore
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Stanton_Heathmore
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=0 for Picklestock
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Simulation lambda$transportGoods$13
+INFO: Reset goodsTransportedToday for Picklestock
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Processing railway: Stanton_Heathmore <-> Picklestock, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Before transport: Picklestock stockpile=12050, Stanton_Heathmore stockpile=11576
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Railway transportGoods
+INFO: Transporting goods: Picklestock -> Stanton_Heathmore, state=Single-track completed, directionAToB=false
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: SingleTrack: Attempting transport Picklestock -> Stanton_Heathmore, directionAToB=false, available=12050, townA=Stanton_Heathmore, townB=Picklestock
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received -100 goods for Picklestock, new stockpile=11950
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Railway toggleDirection
+INFO: Toggled direction: Stanton_Heathmore <-> Picklestock, new directionAToB=true
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.patterns.SingleTrack transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile updated, new directionAToB=true
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Simulation transportGoods
+INFO: Transported 100 goods from Picklestock to Stanton_Heathmore, source stockpile=11950, destination stockpile=11576
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Town setGoodsTransportedToday
+INFO: Set goodsTransportedToday=100 for Picklestock
+May 26, 2025 7:55:10 PM edu.curtin.oose2025s1.assignment2.model.Town receiveGoods
+INFO: Received 100 goods for Stanton_Heathmore, new stockpile=11676
+May 26, 2025 7:55:11 PM java.lang.Shutdown logRuntimeExit
 FINE: Runtime.exit() called with status: 143
 java.lang.Throwable: Runtime.exit(143)
 	at java.base/java.lang.Shutdown.logRuntimeExit(Shutdown.java:179)

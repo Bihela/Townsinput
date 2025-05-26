@@ -5,7 +5,7 @@ import edu.curtin.oose2025s1.assignment2.model.Town;
 
 public class DualTrack implements RailwayState {
     @Override
-    public int transportGoods(Town source, Town destination, int availableGoods) {
+    public int transportGoods(Town source, Town destination, int availableGoods, Railway railway) {
         return Math.min(availableGoods, 100);
     }
 

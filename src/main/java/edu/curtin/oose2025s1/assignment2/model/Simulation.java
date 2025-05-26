@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Simulation {
     private static final Logger LOGGER = Logger.getLogger(Simulation.class.getName());
     private final MessageProcessor messageProcessor;
-    @SuppressWarnings("PMD.UnusedPrivateField") // Field used for dependency injection and observer setup
+    @SuppressWarnings("PMD.UnusedPrivateField")
     private final OutputManager outputManager;
     private final List<Observer> observers = new ArrayList<>();
     private final List<Town> towns = new ArrayList<>();
@@ -106,7 +108,35 @@ public class Simulation {
     }
 
     private void transportGoods() {
-        towns.forEach(Town::transportGoods);
+        LOGGER.info(() -> String.format("Day %d: Starting transport for %d towns", day, towns.size()));
+        // Reset goodsTransportedToday for all towns
+        towns.forEach(t -> {
+            t.setGoodsTransportedToday(0);
+            LOGGER.info(() -> String.format("Reset goodsTransportedToday for %s", t.getName()));
+        });
+        Set<Railway> processedRailways = new HashSet<>();
+        // Collect all unique railways
+        Set<Railway> allRailways = new HashSet<>();
+        for (Town t : towns) {
+            allRailways.addAll(t.getRailways());
+        }
+        // Process each railway once
+        for (Railway railway : allRailways) {
+            if (!processedRailways.contains(railway)) {
+                LOGGER.info(() -> String.format("Processing railway: %s <-> %s, state=%s, directionAToB=%b",
+                        railway.getTownA().getName(), railway.getTownB().getName(), railway.getStatus(), railway.isDirectionAToB()));
+                Town source = railway.isDirectionAToB() ? railway.getTownA() : railway.getTownB();
+                Town destination = railway.isDirectionAToB() ? railway.getTownB() : railway.getTownA();
+                LOGGER.info(() -> String.format("Before transport: %s stockpile=%d, %s stockpile=%d",
+                        source.getName(), source.getGoodsStockpile(), destination.getName(), destination.getGoodsStockpile()));
+                int transported = railway.transportGoods(source, destination, source.getGoodsStockpile());
+                LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
+                        transported, source.getName(), destination.getName(), source.getGoodsStockpile(), destination.getGoodsStockpile()));
+                source.setGoodsTransportedToday(transported); // Update transport stats
+                destination.receiveGoods(transported); // Update destination stockpile
+                processedRailways.add(railway);
+            }
+        }
     }
 
     public long getDay() {
@@ -121,3 +151,4 @@ public class Simulation {
         return new ArrayList<>(messages);
     }
 }
+// REMINDER: Removed redundant source.receiveGoods(-transported) in transportGoods() to fix double stockpile deduction, ensuring correct source stockpile values. Retained goodsTransportedToday reset for alternating transport (2025-05-26).

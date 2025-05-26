@@ -11,8 +11,8 @@ public class UnderConstructionDual implements RailwayState {
     }
 
     @Override
-    public int transportGoods(Town source, Town destination, int availableGoods) {
-        return 0;
+    public int transportGoods(Town source, Town destination, int availableGoods, Railway railway) {
+        return 0; // Single-track still operates, but handled by previous state
     }
 
     @Override
