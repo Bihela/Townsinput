@@ -1,4 +1,65 @@
 graph Towns {
     Stanton_Heathmore
     Picklestock
+    Digholm
+    Ferry_Ramswell
+    Latchsey
+    Chalbrough
+    Tewkesminster
+    Ferry_Toxson
+    Moleholm
+    Garden
+    Water_Barhampton
+    Down_Radholm
+    Nether_Marchbury
+    Digholm -- Stanton_Heathmore [color="black:black"]
+    Ferry_Ramswell -- Stanton_Heathmore 
+    Chalbrough -- Stanton_Heathmore [color="black:black"]
+    Latchsey -- Stanton_Heathmore [color="black:black"]
+    Stanton_Heathmore -- Tewkesminster [color="black:black"]
+    Digholm -- Picklestock [color="black:black"]
+    Digholm -- Picklestock [color="black:black"]
+    Digholm -- Stanton_Heathmore [color="black:black"]
+    Chalbrough -- Digholm 
+    Digholm -- Ferry_Toxson [color="black:black"]
+    Digholm -- Garden [color="black:black"]
+    Ferry_Ramswell -- Stanton_Heathmore 
+    Ferry_Ramswell -- Ferry_Toxson [color="black:black"]
+    Ferry_Ramswell -- Tewkesminster 
+    Ferry_Ramswell -- Water_Barhampton [color="black:black"]
+    Latchsey -- Stanton_Heathmore [color="black:black"]
+    Latchsey -- Tewkesminster 
+    Latchsey -- Moleholm 
+    Latchsey -- Water_Barhampton [style="dashed",color="black:black"]
+    Ferry_Toxson -- Latchsey [color="black:black"]
+    Chalbrough -- Stanton_Heathmore [color="black:black"]
+    Chalbrough -- Digholm 
+    Chalbrough -- Tewkesminster [color="black:black"]
+    Chalbrough -- Moleholm 
+    Chalbrough -- Ferry_Toxson [color="black:black"]
+    Chalbrough -- Water_Barhampton [color="black:black"]
+    Stanton_Heathmore -- Tewkesminster [color="black:black"]
+    Chalbrough -- Tewkesminster [color="black:black"]
+    Ferry_Toxson -- Tewkesminster [color="black:black"]
+    Ferry_Ramswell -- Tewkesminster 
+    Latchsey -- Tewkesminster 
+    Tewkesminster -- Water_Barhampton [color="black:black"]
+    Down_Radholm -- Tewkesminster 
+    Ferry_Ramswell -- Ferry_Toxson [color="black:black"]
+    Ferry_Toxson -- Tewkesminster [color="black:black"]
+    Chalbrough -- Ferry_Toxson [color="black:black"]
+    Ferry_Toxson -- Garden [color="black:black"]
+    Ferry_Toxson -- Water_Barhampton 
+    Digholm -- Ferry_Toxson [color="black:black"]
+    Ferry_Toxson -- Latchsey [color="black:black"]
+    Chalbrough -- Moleholm 
+    Latchsey -- Moleholm 
+    Ferry_Toxson -- Garden [color="black:black"]
+    Digholm -- Garden [color="black:black"]
+    Ferry_Ramswell -- Water_Barhampton [color="black:black"]
+    Chalbrough -- Water_Barhampton [color="black:black"]
+    Ferry_Toxson -- Water_Barhampton 
+    Tewkesminster -- Water_Barhampton [color="black:black"]
+    Latchsey -- Water_Barhampton [style="dashed",color="black:black"]
+    Down_Radholm -- Tewkesminster 
 }

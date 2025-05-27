@@ -114,27 +114,63 @@ public class Simulation {
             t.setGoodsTransportedToday(0);
             LOGGER.info(() -> String.format("Reset goodsTransportedToday for %s", t.getName()));
         });
-        Set<Railway> processedRailways = new HashSet<>();
-        // Collect all unique railways
+        Set<Railway> processed = new HashSet<>();
+        // Collect all railways
         Set<Railway> allRailways = new HashSet<>();
         for (Town t : towns) {
             allRailways.addAll(t.getRailways());
         }
-        // Process each railway once
+        // Process each railway
         for (Railway railway : allRailways) {
-            if (!processedRailways.contains(railway)) {
+            if (!processed.contains(railway)) {
                 LOGGER.info(() -> String.format("Processing railway: %s <-> %s, state=%s, directionAToB=%b",
                         railway.getTownA().getName(), railway.getTownB().getName(), railway.getStatus(), railway.isDirectionAToB()));
-                Town source = railway.isDirectionAToB() ? railway.getTownA() : railway.getTownB();
-                Town destination = railway.isDirectionAToB() ? railway.getTownB() : railway.getTownA();
-                LOGGER.info(() -> String.format("Before transport: %s stockpile=%d, %s stockpile=%d",
-                        source.getName(), source.getGoodsStockpile(), destination.getName(), destination.getGoodsStockpile()));
-                int transported = railway.transportGoods(source, destination, source.getGoodsStockpile());
-                LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
-                        transported, source.getName(), destination.getName(), source.getGoodsStockpile(), destination.getGoodsStockpile()));
-                source.setGoodsTransportedToday(transported); // Update transport stats
-                destination.receiveGoods(transported); // Update destination stockpile
-                processedRailways.add(railway);
+                // Dual-track: process both directions
+                if (railway.getStatus().equals("Dual-track completed")) {
+                    // A -> B
+                    Town sourceA = railway.getTownA();
+                    Town destB = railway.getTownB();
+                    int availableA = sourceA.getGoodsStockpile() - sourceA.getGoodsTransportedToday();
+                    LOGGER.info(() -> String.format("Before transport (A->B): %s stockpile=%d, available=%d, %s stockpile=%d",
+                            sourceA.getName(), sourceA.getGoodsStockpile(), availableA, destB.getName(), destB.getGoodsStockpile()));
+                    int transportedAtoB = railway.transportGoods(sourceA, destB, availableA);
+                    LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
+                            transportedAtoB, sourceA.getName(), destB.getName(), sourceA.getGoodsStockpile(), destB.getGoodsStockpile()));
+                    sourceA.setGoodsTransportedToday(sourceA.getGoodsTransportedToday() + transportedAtoB);
+                    destB.receiveGoods(transportedAtoB);
+                    // B -> A
+                    Town sourceB = railway.getTownB();
+                    Town destA = railway.getTownA();
+                    int availableB = sourceB.getGoodsStockpile() - sourceB.getGoodsTransportedToday();
+                    LOGGER.info(() -> String.format("Before transport (B->A): %s stockpile=%d, available=%d, %s stockpile=%d",
+                            sourceB.getName(), sourceB.getGoodsStockpile(), availableB, destA.getName(), destA.getGoodsStockpile()));
+                    int transportedBtoA = railway.transportGoods(sourceB, destA, availableB);
+                    LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
+                            transportedBtoA, sourceB.getName(), destA.getName(), sourceB.getGoodsStockpile(), destA.getGoodsStockpile()));
+                    sourceB.setGoodsTransportedToday(sourceB.getGoodsTransportedToday() + transportedBtoA);
+                    destA.receiveGoods(transportedBtoA);
+                    processed.add(railway);
+                } else {
+                    // Single-track or under-construction: process one direction
+                    Town source;
+                    Town destination;
+                    if (railway.isDirectionAToB()) {
+                        source = railway.getTownA();
+                        destination = railway.getTownB();
+                    } else {
+                        source = railway.getTownB();
+                        destination = railway.getTownA();
+                    }
+                    int available = source.getGoodsStockpile() - source.getGoodsTransportedToday();
+                    LOGGER.info(() -> String.format("Before transport: %s stockpile=%d, available=%d, %s stockpile=%d",
+                            source.getName(), source.getGoodsStockpile(), available, destination.getName(), destination.getGoodsStockpile()));
+                    int transported = railway.transportGoods(source, destination, available);
+                    LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
+                            transported, source.getName(), destination.getName(), source.getGoodsStockpile(), destination.getGoodsStockpile()));
+                    source.setGoodsTransportedToday(source.getGoodsTransportedToday() + transported);
+                    destination.receiveGoods(transported);
+                    processed.add(railway);
+                }
             }
         }
     }
@@ -151,4 +187,4 @@ public class Simulation {
         return new ArrayList<>(messages);
     }
 }
-// REMINDER: Removed redundant source.receiveGoods(-transported) in transportGoods() to fix double stockpile deduction, ensuring correct source stockpile values. Retained goodsTransportedToday reset for alternating transport (2025-05-26).
+// REMINDER: Updated transportGoods() to use availableGoods = stockpile - goodsTransportedToday to prevent over-transportation. Enhanced logging to track available goods (2025-05-27).

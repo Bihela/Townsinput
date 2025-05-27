@@ -16,17 +16,18 @@ public class SingleTrack implements RailwayState {
         boolean isAToB = railway.isDirectionAToB() && source.equals(railway.getTownA()) && destination.equals(railway.getTownB());
         boolean isBToA = !railway.isDirectionAToB() && source.equals(railway.getTownB()) && destination.equals(railway.getTownA());
 
-        if (isAToB || isBToA) {
-            int transported = Math.min(availableGoods, 100);
+        if ((isAToB || isBToA) && availableGoods >= 100) {
+            int transported = 100;
             source.receiveGoods(-transported); // Deduct from source stockpile
+            destination.receiveGoods(transported); // Consume at destination
             railway.toggleDirection();
             LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile updated, new directionAToB=%b",
                     transported, source.getName(), destination.getName(), railway.isDirectionAToB()));
             return transported;
         }
 
-        LOGGER.info(() -> String.format("No transport: Condition failed for %s -> %s, isAToB=%b, isBToA=%b, directionAToB=%b",
-                source.getName(), destination.getName(), isAToB, isBToA, railway.isDirectionAToB()));
+        LOGGER.info(() -> String.format("No transport: Condition failed for %s -> %s, isAToB=%b, isBToA=%b, directionAToB=%b, available=%d",
+                source.getName(), destination.getName(), isAToB, isBToA, railway.isDirectionAToB(), availableGoods));
         return 0;
     }
 
@@ -40,4 +41,4 @@ public class SingleTrack implements RailwayState {
         return this;
     }
 }
-// REMINDER: Updated transportGoods() to deduct goods from source stockpile and remove direct destination stockpile update, ensuring single-direction alternating transport. Fixed dual-direction transport (both towns gt:100) from Day 9 onward (2025-05-26).
+// REMINDER: Added availableGoods >= 100 check to prevent transport with insufficient stockpile. Updated to call destination.receiveGoods() for consumption. Enhanced logging for debugging (2025-05-27).
