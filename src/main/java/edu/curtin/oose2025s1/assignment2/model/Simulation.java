@@ -115,61 +115,53 @@ public class Simulation {
             LOGGER.info(() -> String.format("Reset goodsTransportedToday for %s", t.getName()));
         });
         Set<Railway> processed = new HashSet<>();
-        // Collect all railways
-        Set<Railway> allRailways = new HashSet<>();
-        for (Town t : towns) {
-            allRailways.addAll(t.getRailways());
-        }
-        // Process each railway
-        for (Railway railway : allRailways) {
-            if (!processed.contains(railway)) {
-                LOGGER.info(() -> String.format("Processing railway: %s <-> %s, state=%s, directionAToB=%b",
-                        railway.getTownA().getName(), railway.getTownB().getName(), railway.getStatus(), railway.isDirectionAToB()));
-                // Dual-track: process both directions
-                if (railway.getStatus().equals("Dual-track completed")) {
-                    // A -> B
-                    Town sourceA = railway.getTownA();
-                    Town destB = railway.getTownB();
-                    int availableA = sourceA.getGoodsStockpile() - sourceA.getGoodsTransportedToday();
-                    LOGGER.info(() -> String.format("Before transport (A->B): %s stockpile=%d, available=%d, %s stockpile=%d",
-                            sourceA.getName(), sourceA.getGoodsStockpile(), availableA, destB.getName(), destB.getGoodsStockpile()));
-                    int transportedAtoB = railway.transportGoods(sourceA, destB, availableA);
-                    LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
-                            transportedAtoB, sourceA.getName(), destB.getName(), sourceA.getGoodsStockpile(), destB.getGoodsStockpile()));
-                    sourceA.setGoodsTransportedToday(sourceA.getGoodsTransportedToday() + transportedAtoB);
-                    destB.receiveGoods(transportedAtoB);
-                    // B -> A
-                    Town sourceB = railway.getTownB();
-                    Town destA = railway.getTownA();
-                    int availableB = sourceB.getGoodsStockpile() - sourceB.getGoodsTransportedToday();
-                    LOGGER.info(() -> String.format("Before transport (B->A): %s stockpile=%d, available=%d, %s stockpile=%d",
-                            sourceB.getName(), sourceB.getGoodsStockpile(), availableB, destA.getName(), destA.getGoodsStockpile()));
-                    int transportedBtoA = railway.transportGoods(sourceB, destA, availableB);
-                    LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
-                            transportedBtoA, sourceB.getName(), destA.getName(), sourceB.getGoodsStockpile(), destA.getGoodsStockpile()));
-                    sourceB.setGoodsTransportedToday(sourceB.getGoodsTransportedToday() + transportedBtoA);
-                    destA.receiveGoods(transportedBtoA);
-                    processed.add(railway);
-                } else {
-                    // Single-track or under-construction: process one direction
-                    Town source;
-                    Town destination;
-                    if (railway.isDirectionAToB()) {
-                        source = railway.getTownA();
-                        destination = railway.getTownB();
+        // Process railways from each town to ensure unique handling
+        for (Town town : towns) {
+            for (Railway railway : town.getRailways()) {
+                if (processed.add(railway)) { // Only process if not already handled
+                    LOGGER.info(() -> String.format("Processing railway: %s <-> %s, state=%s, directionAToB=%b",
+                            railway.getTownA().getName(), railway.getTownB().getName(), railway.getStatus(), railway.isDirectionAToB()));
+                    // Dual-track: process both directions
+                    if (railway.getStatus().equals("Dual-track completed")) {
+                        // A -> B
+                        Town sourceA = railway.getTownA();
+                        Town destB = railway.getTownB();
+                        int availableA = sourceA.getGoodsStockpile() - sourceA.getGoodsTransportedToday();
+                        LOGGER.info(() -> String.format("Before transport (A->B): %s stockpile=%d, available=%d, %s stockpile=%d",
+                                sourceA.getName(), sourceA.getGoodsStockpile(), availableA, destB.getName(), destB.getGoodsStockpile()));
+                        int transportedAtoB = railway.transportGoods(sourceA, destB, availableA);
+                        LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
+                                transportedAtoB, sourceA.getName(), destB.getName(), sourceA.getGoodsStockpile(), destB.getGoodsStockpile()));
+                        sourceA.setGoodsTransportedToday(sourceA.getGoodsTransportedToday() + transportedAtoB);
+                        // B -> A
+                        Town sourceB = railway.getTownB();
+                        Town destA = railway.getTownA();
+                        int availableB = sourceB.getGoodsStockpile() - sourceB.getGoodsTransportedToday();
+                        LOGGER.info(() -> String.format("Before transport (B->A): %s stockpile=%d, available=%d, %s stockpile=%d",
+                                sourceB.getName(), sourceB.getGoodsStockpile(), availableB, destA.getName(), destA.getGoodsStockpile()));
+                        int transportedBtoA = railway.transportGoods(sourceB, destA, availableB);
+                        LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
+                                transportedBtoA, sourceB.getName(), destA.getName(), sourceB.getGoodsStockpile(), destA.getGoodsStockpile()));
+                        sourceB.setGoodsTransportedToday(sourceB.getGoodsTransportedToday() + transportedBtoA);
                     } else {
-                        source = railway.getTownB();
-                        destination = railway.getTownA();
+                        // Single-track or under-construction: process one direction
+                        Town source;
+                        Town destination;
+                        if (railway.isDirectionAToB()) {
+                            source = railway.getTownA();
+                            destination = railway.getTownB();
+                        } else {
+                            source = railway.getTownB();
+                            destination = railway.getTownA();
+                        }
+                        int available = source.getGoodsStockpile() - source.getGoodsTransportedToday();
+                        LOGGER.info(() -> String.format("Before transport: %s stockpile=%d, available=%d, %s stockpile=%d",
+                                source.getName(), source.getGoodsStockpile(), available, destination.getName(), destination.getGoodsStockpile()));
+                        int transported = railway.transportGoods(source, destination, available);
+                        LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
+                                transported, source.getName(), destination.getName(), source.getGoodsStockpile(), destination.getGoodsStockpile()));
+                        source.setGoodsTransportedToday(source.getGoodsTransportedToday() + transported);
                     }
-                    int available = source.getGoodsStockpile() - source.getGoodsTransportedToday();
-                    LOGGER.info(() -> String.format("Before transport: %s stockpile=%d, available=%d, %s stockpile=%d",
-                            source.getName(), source.getGoodsStockpile(), available, destination.getName(), destination.getGoodsStockpile()));
-                    int transported = railway.transportGoods(source, destination, available);
-                    LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile=%d, destination stockpile=%d",
-                            transported, source.getName(), destination.getName(), source.getGoodsStockpile(), destination.getGoodsStockpile()));
-                    source.setGoodsTransportedToday(source.getGoodsTransportedToday() + transported);
-                    destination.receiveGoods(transported);
-                    processed.add(railway);
                 }
             }
         }
@@ -187,4 +179,4 @@ public class Simulation {
         return new ArrayList<>(messages);
     }
 }
-// REMINDER: Updated transportGoods() to use availableGoods = stockpile - goodsTransportedToday to prevent over-transportation. Enhanced logging to track available goods (2025-05-27).
+// REMINDER: Fixed duplicate railway processing by iterating over towns' railways directly and using HashSet to ensure uniqueness. Removed redundant receiveGoods() calls to prevent double consumption. Retained availableGoods = stockpile - goodsTransportedToday to prevent over-transportation. Enhanced logging (2025-05-27).
