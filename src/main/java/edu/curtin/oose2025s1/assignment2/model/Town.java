@@ -27,10 +27,8 @@ public class Town {
 
     public void receiveGoods(int goods) {
         if (goods > 0) {
-            // Transported goods are consumed, not added to stockpile
             LOGGER.info(() -> String.format("Consumed %d goods at %s, stockpile unchanged=%d", goods, name, goodsStockpile));
         } else {
-            // Negative goods (deduction from source) update stockpile, prevent negative stockpile
             int deduction = Math.max(goods, -goodsStockpile);
             goodsStockpile += deduction;
             LOGGER.info(() -> String.format("Deducted %d goods from %s, new stockpile=%d", -deduction, name, goodsStockpile));
@@ -84,4 +82,3 @@ public class Town {
                 .count();
     }
 }
-// REMINDER: Updated receiveGoods() to prevent negative stockpile by capping deductions at goodsStockpile. Retained consumption logic for positive goods per Section 2.3 and enhanced logging (2025-05-27).

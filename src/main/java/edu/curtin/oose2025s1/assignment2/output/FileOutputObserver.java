@@ -23,7 +23,6 @@ public class FileOutputObserver implements Observer {
             for (Railway railway : town.getRailways()) {
                 Town townA = railway.getTownA();
                 Town townB = railway.getTownB();
-                // Output only if townA's name is lexicographically less than townB's
                 if (townA.getName().compareTo(townB.getName()) < 0) {
                     String status = railway.getStatus();
                     String edge = switch (status) {

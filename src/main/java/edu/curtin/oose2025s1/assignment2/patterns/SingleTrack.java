@@ -18,8 +18,8 @@ public class SingleTrack implements RailwayState {
 
         if ((isAToB || isBToA) && availableGoods >= 100) {
             int transported = 100;
-            source.receiveGoods(-transported); // Deduct from source stockpile
-            destination.receiveGoods(transported); // Consume at destination
+            source.receiveGoods(-transported); 
+            destination.receiveGoods(transported); 
             railway.toggleDirection();
             LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile updated, new directionAToB=%b",
                     transported, source.getName(), destination.getName(), railway.isDirectionAToB()));
@@ -41,4 +41,3 @@ public class SingleTrack implements RailwayState {
         return this;
     }
 }
-// REMINDER: Added availableGoods >= 100 check to prevent transport with insufficient stockpile. Updated to call destination.receiveGoods() for consumption. Enhanced logging for debugging (2025-05-27).

@@ -13,12 +13,11 @@ public class DualTrack implements RailwayState {
                 source.getName(), destination.getName(), availableGoods,
                 railway.getTownA().getName(), railway.getTownB().getName()));
 
-        // Dual-track allows transport in both directions independently
         if ((source.equals(railway.getTownA()) && destination.equals(railway.getTownB()) ||
              source.equals(railway.getTownB()) && destination.equals(railway.getTownA())) && availableGoods >= 100) {
             int transported = 100;
-            source.receiveGoods(-transported); // Deduct from source stockpile
-            destination.receiveGoods(transported); // Consume at destination
+            source.receiveGoods(-transported);
+            destination.receiveGoods(transported); 
             LOGGER.info(() -> String.format("Transported %d goods from %s to %s, source stockpile updated to %d",
                     transported, source.getName(), destination.getName(), source.getGoodsStockpile()));
             return transported;
@@ -39,4 +38,3 @@ public class DualTrack implements RailwayState {
         return this;
     }
 }
-// REMINDER: Added availableGoods >= 100 check to prevent transport with insufficient stockpile. Updated to call destination.receiveGoods() for consumption. Enhanced logging for debugging (2025-05-27).

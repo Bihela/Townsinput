@@ -15,7 +15,7 @@ public class Railway {
         this.townA = townA;
         this.townB = townB;
         this.state = new UnderConstructionSingle(currentDay);
-        this.directionAToB = true; // Deterministic initial direction
+        this.directionAToB = true;
         LOGGER.info(() -> String.format("Railway created: %s <-> %s, initial directionAToB=%b",
                 townA.getName(), townB.getName(), directionAToB));
     }
